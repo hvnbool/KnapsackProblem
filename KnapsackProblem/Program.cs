@@ -25,6 +25,8 @@ namespace KnapsackProblem
 
             Item[] result = KnapsackProblemSolver.FindOptimalSet(items, 10);
 
+            Console.WriteLine();
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
