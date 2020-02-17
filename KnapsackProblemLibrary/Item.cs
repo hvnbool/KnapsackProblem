@@ -18,7 +18,7 @@ namespace KnapsackProblemLibrary
             Id = id;
             Weight = weight;
             Value = value;
-            UnitValue = (float)value / weight;
+            UnitValue = (double)value / weight;
         }
     }
 }

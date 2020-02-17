@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Item.cs" />
     <Compile Include="KnapsackProblemSolver.cs" />
-    <Compile Include="Leaf.cs" />
+    <Compile Include="KnapsackProblemSolver.Leaf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
