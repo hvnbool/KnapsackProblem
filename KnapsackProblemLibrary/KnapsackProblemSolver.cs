@@ -40,7 +40,7 @@ namespace KnapsackProblemLibrary
                 //    }
                 //}
                 // bestLeaf = leafs[bestLeafIndex];
-                bestLeaf = leafs.Peek();
+                bestLeaf = leafs.Pop();
 
                 // Finish if this leaf is for the case where all items have been checked
                 if (bestLeaf.Level == items.Length - 1)
@@ -48,7 +48,6 @@ namespace KnapsackProblemLibrary
 
                 // If didn't break there still are items to decide about
                 // leafs.RemoveAt(bestLeafIndex);
-                leafs.Pop();
                 int nextLevel = bestLeaf.Level + 1;
 
                 // Add leaf where we don't take next item
