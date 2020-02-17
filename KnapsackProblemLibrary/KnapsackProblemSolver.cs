@@ -17,13 +17,10 @@ namespace KnapsackProblemLibrary
             // First we sort given items by their unit values
             items = items.OrderBy(c => c.UnitValue).Reverse().ToArray();
 
-            
-            List<Leaf> leafs = new List<Leaf>()
-            {
-                new Leaf(-1, 0, 0, new int[]{}, items[0].UnitValue * capacity)
-            };
 
-            
+            MaxHeap<Leaf> leafs = new MaxHeap<Leaf>((int)Math.Pow(2, items.Length));
+            new Leaf(-1, 0, 0, new int[] { }, items[0].UnitValue * capacity);
+
             // Best leaf will eventually reference to the leaf of the last level with the most possible total value
             Leaf bestLeaf;
 
@@ -32,28 +29,30 @@ namespace KnapsackProblemLibrary
             {
 
                 // Find the best leaf
-                double maxBestCaseValue = -1;
-                int bestLeafIndex = -1;
-                for (int i = 0; i < leafs.Count(); i++)
-                {
-                    if (leafs[i].BestCaseValue > maxBestCaseValue)
-                    {
-                        maxBestCaseValue = leafs[i].BestCaseValue;
-                        bestLeafIndex = i;
-                    }
-                }
-                bestLeaf = leafs[bestLeafIndex];
+                //double maxBestCaseValue = -1;
+                //int bestLeafIndex = -1;
+                //for (int i = 0; i < leafs.Count(); i++)
+                //{
+                //    if (leafs[i].BestCaseValue > maxBestCaseValue)
+                //    {
+                //        maxBestCaseValue = leafs[i].BestCaseValue;
+                //        bestLeafIndex = i;
+                //    }
+                //}
+                // bestLeaf = leafs[bestLeafIndex];
+                bestLeaf = leafs.Peek();
 
                 // Finish if this leaf is for the case where all items have been checked
                 if (bestLeaf.Level == items.Length - 1)
                     break;
 
                 // If didn't break there still are items to decide about
-                leafs.RemoveAt(bestLeafIndex);
+                // leafs.RemoveAt(bestLeafIndex);
+                leafs.Pop();
                 int nextLevel = bestLeaf.Level + 1;
 
                 // Add leaf where we don't take next item
-                leafs.Append(new Leaf(bestLeaf.Level,
+                leafs.Add(new Leaf(bestLeaf.Level,
                     bestLeaf.WeightSum,
                     bestLeaf.ValueSum,
                     bestLeaf.ItemsTaken,
@@ -67,7 +66,7 @@ namespace KnapsackProblemLibrary
                     newItemsTaken.Add(nextLevel);
 
                     // Add the leaf
-                    leafs.Append(new Leaf(bestLeaf.Level,
+                    leafs.Add(new Leaf(bestLeaf.Level,
                         bestLeaf.WeightSum + items[nextLevel].Weight,
                         bestLeaf.ValueSum + items[nextLevel].Value,
                         newItemsTaken.ToArray(),

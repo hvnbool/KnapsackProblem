@@ -9,11 +9,11 @@ namespace KnapsackProblemLibrary
     class MaxHeap<T> where T : IComparable<T>
     {
         private readonly T[] _elements;
-        private int _size;
+        private int _size = 0;
 
-        public MaxHeap(int size)
+        public MaxHeap(int capacity)
         {
-            _elements = new T[size];
+            _elements = new T[capacity];
         }
 
         private int GetLeftChildIndex(int elementIndex) => 2 * elementIndex + 1;
