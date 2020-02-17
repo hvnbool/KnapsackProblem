@@ -22,8 +22,6 @@ namespace KnapsackProblemLibrary
                 new Leaf(0, 0, 0, new int[]{}, items[0].UnitValue * capacity)
             };
 
-            
-
 
             return items;
         }
