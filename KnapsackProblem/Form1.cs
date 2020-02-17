@@ -42,12 +42,20 @@ namespace KnapsackProblem
             inputDG.Rows[0].SetValues(vals);
         }
 
-        // Число вершин (равно инпуту)
+        // Ёмкость
+        public int capacity
+        {
+            get => (int)capacityInput.Value;
+            set => capacityInput.Value = value;
+        }
+
+        // Число предметов
         public int thingsNumber
         {
             get => (int)thingsNumberInput.Value;
             set => thingsNumberInput.Value = value;
         }
+
 
         // True  = заполнены все ячейки таблицы
         // False = хотя бы одна не заполнена
@@ -181,7 +189,7 @@ namespace KnapsackProblem
                 items[i] = new Item(matrix[0, i], matrix[1, i], matrix[2, i]);
             }
 
-            Item[] result = KnapsackProblemSolver.FindOptimalSet(items, 10);
+            Item[] result = KnapsackProblemSolver.FindOptimalSet(items, capacity);
 
             ShowResult(result);
         }
