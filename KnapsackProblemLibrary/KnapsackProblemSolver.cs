@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace KnapsackProblemLibrary
 {
-    public partial class KnapsackProblemSolver
+    /// <summary>
+    /// Class with a method that solves knapsack problem using "branch and bound" method
+    /// For that it uses 
+    /// </summary>
+    public static partial class KnapsackProblemSolver
     {
         public static Item[] FindOptimalSet(Item[] items, int capacity)
         {
@@ -70,6 +74,8 @@ namespace KnapsackProblemLibrary
 
             // For each index in bestLeaf.takenItems take corresponding item and return the array
             return bestLeaf.ItemsTaken.Select(index => items[index]).ToArray();
+
+
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using KnapsackProblemLibrary;
+using static KnapsackProblemLibrary.KnapsackProblemSolver;
 
 namespace KnapsackProblem
 {
@@ -23,7 +20,7 @@ namespace KnapsackProblem
                 new Item(4, 1, 40)
             };
 
-            Item[] result = KnapsackProblemSolver.FindOptimalSet(items, 10);
+            Item[] result = FindOptimalSet(items, 10);
 
             Console.WriteLine();
 

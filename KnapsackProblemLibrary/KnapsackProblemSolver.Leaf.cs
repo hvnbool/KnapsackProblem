@@ -2,7 +2,7 @@
 
 namespace KnapsackProblemLibrary
 {
-    public partial class KnapsackProblemSolver
+    public static partial class KnapsackProblemSolver
     {
         private class Leaf : IComparable<Leaf>
         {

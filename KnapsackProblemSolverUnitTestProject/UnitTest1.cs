@@ -1,6 +1,5 @@
-﻿using System;
-using KnapsackProblemLibrary;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static KnapsackProblemLibrary.KnapsackProblemSolver;
 
 namespace KnapsackProblemSolverUnitTestProject
 {
@@ -18,7 +17,7 @@ namespace KnapsackProblemSolverUnitTestProject
                 new Item(4, 1, 40)
             };
 
-            Item[] result = KnapsackProblemSolver.FindOptimalSet(items, 10);
+            Item[] result = FindOptimalSet(items, 10);
 
             Assert.IsTrue(true);
         }
