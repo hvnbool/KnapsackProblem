@@ -19,7 +19,7 @@ namespace KnapsackProblemLibrary
 
 
             MaxHeap<Leaf> leafs = new MaxHeap<Leaf>((int)Math.Pow(2, items.Length));
-            new Leaf(-1, 0, 0, new int[] { }, items[0].UnitValue * capacity);
+            leafs.Add(new Leaf(-1, 0, 0, new int[] { }, items[0].UnitValue * capacity));
 
             // Best leaf will eventually reference to the leaf of the last level with the most possible total value
             Leaf bestLeaf;
