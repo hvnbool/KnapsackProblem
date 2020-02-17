@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using KnapsackProblemLibrary;
 
 namespace KnapsackProblem
 {
@@ -173,8 +174,26 @@ namespace KnapsackProblem
         private void SolveBtn_Click(object sender, EventArgs e)
         {
             int[,] matrix = ParseData();
-            // Тут передача данных в следующую форму
+            Item[] items = new Item[thingsNumber];
 
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                items[i] = new Item(matrix[0, i], matrix[1, i], matrix[2, i]);
+            }
+
+            Item[] result = KnapsackProblemSolver.FindOptimalSet(items, 10);
+
+            ShowResult(result);
+        }
+
+        private void ShowResult(Item[] items)
+        {
+            string text = "Берём предметы с номерами: ";
+            for (int i = 0; i < items.Length; i++)
+            {
+                text += items[i].Id + " ";
+            }
+            MessageBox.Show(text, "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
