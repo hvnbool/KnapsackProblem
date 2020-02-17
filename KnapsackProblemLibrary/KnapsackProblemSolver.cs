@@ -51,7 +51,7 @@ namespace KnapsackProblemLibrary
                 int nextLevel = bestLeaf.Level + 1;
 
                 // Add leaf where we don't take next item
-                leafs.Add(new Leaf(bestLeaf.Level,
+                leafs.Add(new Leaf(nextLevel,
                     bestLeaf.WeightSum,
                     bestLeaf.ValueSum,
                     bestLeaf.ItemsTaken,
@@ -65,11 +65,11 @@ namespace KnapsackProblemLibrary
                     newItemsTaken.Add(nextLevel);
 
                     // Add the leaf
-                    leafs.Add(new Leaf(bestLeaf.Level,
+                    leafs.Add(new Leaf(nextLevel,
                         bestLeaf.WeightSum + items[nextLevel].Weight,
                         bestLeaf.ValueSum + items[nextLevel].Value,
                         newItemsTaken.ToArray(),
-                        bestLeaf.ValueSum + (capacity - bestLeaf.WeightSum) * items[bestLeaf.Level + 1].UnitValue));
+                        bestLeaf.ValueSum + (capacity - bestLeaf.WeightSum) * items[nextLevel].UnitValue));
                 }
             }
 
