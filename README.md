@@ -23,10 +23,14 @@ The main window of the program contains:
 *  A field for the Quantity of available items,
 *  A field for the Knapsack capacity,
 *  A table for the Values and Weights of available Items (Items in the table are indexed so that they can be referenced in the answer),
-*  A button to get the answer for given data.
+*  A button to get the answer for given data.  
+
+![alt text](https://github.com/hvnbool/KnapsackProblem/blob/master/img/Main%20window.png "Main Window")  
 
 In order to use the application get an answer, input your data into corresponding fields and press the Solve button.  
-If the problem can be solved with given data, a new window will pop up. This window will contain indices of Items that have the highest total value while fitting into the Knapsack.
+If the problem can be solved with given data, a new window will pop up. This window will contain indices of Items that have the highest total value while fitting into the Knapsack.  
+
+![alt text](https://github.com/hvnbool/KnapsackProblem/blob/master/img/Answer%20window.png "Answer Window")
 
 
 # Troubleshooting 
