@@ -10,7 +10,6 @@ namespace KnapsackProblemLibrary
 {
     /// <summary>
     /// Class with a method that solves knapsack problem using "branch and bound" method
-    /// For that it uses 
     /// </summary>
     public static partial class KnapsackProblemSolver
     {
@@ -22,8 +21,7 @@ namespace KnapsackProblemLibrary
             // First we sort given items by their unit values
             items = items.OrderBy(c => c.UnitValue).Reverse().ToArray();
 
-
-            MaxHeap<Leaf> leafs = new MaxHeap<Leaf>((int)Math.Pow(2, items.Length));
+            MaxHeap<Leaf> leafs = new MaxHeap<Leaf>(10000);
             leafs.Add(new Leaf(-1, 0, 0, new int[] { }, items[0].UnitValue * capacity));
 
             // Best leaf will eventually reference to the leaf of the last level with the most possible total value

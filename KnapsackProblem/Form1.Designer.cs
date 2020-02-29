@@ -50,7 +50,8 @@
             this.inputDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.inputDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inputDG.ColumnHeadersVisible = false;
-            this.inputDG.Location = new System.Drawing.Point(59, 111);
+            this.inputDG.Location = new System.Drawing.Point(13, 171);
+            this.inputDG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.inputDG.Name = "inputDG";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -65,15 +66,16 @@
             dataGridViewCellStyle2.Format = "N0";
             dataGridViewCellStyle2.NullValue = null;
             this.inputDG.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.inputDG.Size = new System.Drawing.Size(643, 70);
+            this.inputDG.Size = new System.Drawing.Size(1174, 167);
             this.inputDG.TabIndex = 0;
             this.inputDG.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.InputDG_EditingControlShowing);
             // 
             // thingsNumberInput
             // 
-            this.thingsNumberInput.Location = new System.Drawing.Point(264, 28);
+            this.thingsNumberInput.Location = new System.Drawing.Point(396, 43);
+            this.thingsNumberInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.thingsNumberInput.Maximum = new decimal(new int[] {
-            20,
+            40,
             0,
             0,
             0});
@@ -83,7 +85,7 @@
             0,
             0});
             this.thingsNumberInput.Name = "thingsNumberInput";
-            this.thingsNumberInput.Size = new System.Drawing.Size(120, 20);
+            this.thingsNumberInput.Size = new System.Drawing.Size(180, 26);
             this.thingsNumberInput.TabIndex = 1;
             this.thingsNumberInput.Value = new decimal(new int[] {
             5,
@@ -94,9 +96,10 @@
             // 
             // solveBtn
             // 
-            this.solveBtn.Location = new System.Drawing.Point(493, 28);
+            this.solveBtn.Location = new System.Drawing.Point(740, 43);
+            this.solveBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.solveBtn.Name = "solveBtn";
-            this.solveBtn.Size = new System.Drawing.Size(209, 62);
+            this.solveBtn.Size = new System.Drawing.Size(314, 95);
             this.solveBtn.TabIndex = 2;
             this.solveBtn.Text = "Решить";
             this.solveBtn.UseVisualStyleBackColor = true;
@@ -105,44 +108,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 28);
+            this.label1.Location = new System.Drawing.Point(237, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Число предметов:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(201, 72);
+            this.label2.Location = new System.Drawing.Point(302, 111);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ёмкость: ";
             // 
             // capacityInput
             // 
-            this.capacityInput.Location = new System.Drawing.Point(264, 70);
+            this.capacityInput.Location = new System.Drawing.Point(396, 108);
+            this.capacityInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.capacityInput.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.capacityInput.Name = "capacityInput";
-            this.capacityInput.Size = new System.Drawing.Size(120, 20);
+            this.capacityInput.Size = new System.Drawing.Size(180, 26);
             this.capacityInput.TabIndex = 5;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 229);
+            this.ClientSize = new System.Drawing.Size(1200, 352);
             this.Controls.Add(this.capacityInput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.solveBtn);
             this.Controls.Add(this.thingsNumberInput);
             this.Controls.Add(this.inputDG);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.inputDG)).EndInit();

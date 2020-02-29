@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+    using System.Windows.Forms;
 
 namespace KnapsackProblemLibrary
 {
     class MaxHeap<T> where T : IComparable<T>
     {
-        private readonly T[] _elements;
+        private T[] _elements;
         private int _size = 0;
 
         public MaxHeap(int capacity)
@@ -65,7 +66,18 @@ namespace KnapsackProblemLibrary
         public void Add(T element)
         {
             if (_size == _elements.Length)
-                throw new IndexOutOfRangeException();
+            {
+                try
+                {
+                    var newElements = new T[_elements.Length * 2];
+                    Array.Copy(_elements, newElements, _elements.Length);
+                    _elements = newElements;
+                }
+                catch (Exception e)
+                {
+                    
+                }
+            }
 
             _elements[_size] = element;
             _size++;
