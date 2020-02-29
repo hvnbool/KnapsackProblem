@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using KnapsackProblemLibrary;
 using static KnapsackProblemLibrary.KnapsackProblemSolver;
@@ -22,7 +23,7 @@ namespace KnapsackProblem
         public void InitializeTable ()
         {
             inputDG.Columns.Add("header", "");
-            var rowHeaders = new string[]{ "Номер", "масса", "стоимость" };
+            var rowHeaders = new string[]{ "Index", "Weight", "Value" };
 
             foreach (var headerText in rowHeaders)
             {
@@ -79,7 +80,7 @@ namespace KnapsackProblem
         // Данные из таблицы -> двумерный массив интов
         public int[,] ParseData()
         {
-            if (!IsDataFilled) throw new Exception("Данные не заполнены");
+            if (!IsDataFilled) throw new Exception("No input data");
 
             var matrix = new int[3, thingsNumber];
 
@@ -197,12 +198,13 @@ namespace KnapsackProblem
 
         private void ShowResult(Item[] items)
         {
-            string text = "Берём предметы с номерами: ";
-            for (int i = 0; i < items.Length; i++)
-            {
-                text += items[i].Id + " ";
-            }
-            MessageBox.Show(text, "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string text;
+            if (items.Length == 0)
+                text = "None of the items fit into your knapsack :(";
+            else
+                text = "The best set is: " + 
+                       string.Join(", ", items.Select(item => item.Id).OrderBy(index => index));
+            MessageBox.Show(text, "Here's the result!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
