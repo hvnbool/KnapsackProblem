@@ -1,4 +1,4 @@
-# FordFulkersonAlgorithm
+# KnapsackProblem
 This is a .NET Framework based Windows applcation for solving Knapsack Problem.
 
 The algorithm used for solving the problem is based on [Branch and bound method](https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/).
