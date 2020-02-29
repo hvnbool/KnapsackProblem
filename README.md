@@ -32,7 +32,7 @@ If the problem can be solved with given data, a new window will pop up. This win
 # Troubleshooting 
 ## FAQ
 Q: Why is the quantity of available items limited to 40 items?  
-A: It may take a lot of time to calculate the result if there are many available items. Besides, it is a Even with 40 available items it might take a lot of time to calculate the result.
+A: It may take a lot of time to calculate the result if there are many available items. Besides, it is a university task, so input data with a high quantity of available items is not expected.
 
 Q: Why the interface looks so inattractive?  
 A: The program was implemented for our university task. The focus in the task was on the algorithm, not the GUI, so we weren't developing it much.
