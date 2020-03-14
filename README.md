@@ -30,9 +30,9 @@ The main window of the program contains:
     *  Index - generated automatically, used for referring to the item in the answer.
     *  Weight - natural number, same units as Knapsack capacity - shows how much of the capacity it takes.
     *  Value - natural number, units according to your task - shows how important the item is.
-*  A button "Get the answer!" to get the answer for given data.  
+*  A button "Get the answer!" to get the answer for given data.
 
-> :warning: **Quantity of available items is limited to 40. All input data is natural numbers, i.e. 1, 2, 3 and so on.**
+**Note**: Quantity of available items is limited to 40. All input data is natural numbers, i.e. 1, 2, 3 and so on.
 
 ![alt text](https://github.com/hvnbool/KnapsackProblem/blob/master/img/Main%20window.png "Main Window")  
 
