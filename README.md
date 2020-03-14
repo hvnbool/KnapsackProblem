@@ -15,16 +15,16 @@ In order to use the application you need:
 
 ## Installation
 
-1. In order to open the project locally in your Visual Studio, you need to use one for these methods:
+1. Open the project in your Visual Studio:
     *  If on the GitHub page there is an "Open in Visual Studio" option, use it.  
     *  Download the project as a zip archive, unzip it and open the solution file in Visual Studio.
     *  Clone the project using Git commands and open cloned solution in Visual Studio.
 
-2. Build the project using Visual Studio. Once the building is fished, launch the program.
+2. Build the project using Visual Studio. Once the building is finished, launch the program.
 
 # Usage
 The main window of the program contains:
-*  A field for the Quantity of available items (Note: not more than 40),
+*  A field for the Quantity of available items (natural number, not more than 40),
 *  A field for the Knapsack capacity (natural number, units according to your task),
 *  A table for the info about available items:
     *  Index - generated automatically, used for referring to the item in the answer.
